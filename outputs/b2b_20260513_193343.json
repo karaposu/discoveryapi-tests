@@ -1,0 +1,3887 @@
+{
+  "run_id": "b2b_20260513_193343",
+  "started_at": "2026-05-13T19:33:43.239132+00:00",
+  "query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+  "retrieval_method": "bright_data_google_serp",
+  "skip_judge": false,
+  "experiment_config": {
+    "category": "b2b_contact_data",
+    "model": "gpt-4o",
+    "prompt_version": "b2b_contact_data_default_v1",
+    "num_expansions": 5,
+    "allowed_entity_types": [
+      "person_profile",
+      "company_profile",
+      "mixed_person_company"
+    ],
+    "allowed_source_lanes": [
+      "linkedin_person",
+      "linkedin_company",
+      "crunchbase_person",
+      "crunchbase_company",
+      "company_team_page",
+      "general_web"
+    ],
+    "allowed_evidence_modes": [
+      "snippet_only",
+      "content",
+      "structured_enrichment"
+    ],
+    "allowed_target_fields": [
+      "person_name",
+      "current_title",
+      "current_company",
+      "profile_or_source_url",
+      "evidence_source",
+      "location",
+      "seniority",
+      "department_or_function",
+      "work_history",
+      "professional_summary",
+      "company_name",
+      "company_domain_or_profile_url",
+      "industry_or_description",
+      "headquarters_or_location",
+      "headcount_or_company_size",
+      "funding",
+      "investors",
+      "employee_count",
+      "founded_year",
+      "growth_signal",
+      "relevant_employee_or_profile_links"
+    ],
+    "allowed_exclusions": [
+      "job_postings",
+      "career_advice",
+      "resume_templates",
+      "hr_software_pages",
+      "recruiting_software_pages",
+      "staffing_agency_marketing_pages",
+      "generic_hr_blogs",
+      "unsupported_lead_directories"
+    ],
+    "max_query_length": null,
+    "fixed_retrieval_method": "bright_data_google_serp",
+    "fixed_result_count": 10,
+    "locale": "United States"
+  },
+  "input_data": {
+    "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+    "normalized_intent": "Find public professional or company evidence for B2B contact-data discovery.",
+    "declared_constraints": [],
+    "category_contract_ref": "task/b2b_contact_data_category_output_contract.py",
+    "expansion_paradigm_ref": "task/expansion_paradigm_types.py",
+    "allowed_source_lanes": [
+      "linkedin_person",
+      "linkedin_company",
+      "crunchbase_person",
+      "crunchbase_company",
+      "company_team_page",
+      "general_web"
+    ],
+    "allowed_exclusions": [
+      "job_postings",
+      "career_advice",
+      "resume_templates",
+      "hr_software_pages",
+      "recruiting_software_pages",
+      "staffing_agency_marketing_pages",
+      "generic_hr_blogs",
+      "unsupported_lead_directories"
+    ],
+    "allowed_target_fields": [
+      "person_name",
+      "current_title",
+      "current_company",
+      "profile_or_source_url",
+      "evidence_source",
+      "location",
+      "seniority",
+      "department_or_function",
+      "work_history",
+      "professional_summary",
+      "company_name",
+      "company_domain_or_profile_url",
+      "industry_or_description",
+      "headquarters_or_location",
+      "headcount_or_company_size",
+      "funding",
+      "investors",
+      "employee_count",
+      "founded_year",
+      "growth_signal",
+      "relevant_employee_or_profile_links"
+    ],
+    "notes_for_llm": "Generate search queries for Bright Data Google SERP retrieval. Preserve explicit query constraints unless a broadened constraint is recorded in expansion_trace."
+  },
+  "expansion_result": {
+    "result_id": "exp_001",
+    "category": "b2b_contact_data",
+    "model": "gpt-4o",
+    "prompt_version": "b2b_contact_data_default_v1",
+    "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+    "expansions": [
+      {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      }
+    ],
+    "generation_notes": null
+  },
+  "records": [
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 1,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.linkedin.com/jobs/vp-sales-cybersecurity-jobs",
+        "title": "358 Vp Sales Cybersecurity jobs in United States",
+        "snippet": "Today's top 358 Vp Sales Cybersecurity jobs in United States. Leverage your professional network, and get hired. New Vp Sales Cybersecurity jobs added ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-cybersecurity...",
+          "search_engine": "google",
+          "query": {
+            "q": "VP Sales at cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 1,
+          "title": "358 Vp Sales Cybersecurity jobs in United States",
+          "url": "https://www.linkedin.com/jobs/vp-sales-cybersecurity-jobs",
+          "description": "Today's top 358 Vp Sales Cybersecurity jobs in United States. Leverage your professional network, and get hired. New Vp Sales Cybersecurity jobs added ...",
+          "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-cybersecurity..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 2,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.indeed.com/q-vice-president-of-sales-cyber-security-jobs.html",
+        "title": "Vice President of Sales Cyber Security Jobs, Employment",
+        "snippet": "50 Vice President of Sales Cyber Security jobs available on Indeed.com. Apply to Vice President of Sales, Vice President of Product, Enterprise Account ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.indeed.com \u203a q-vice-president-of-sales-cybe...",
+          "search_engine": "google",
+          "query": {
+            "q": "VP Sales at cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 2,
+          "title": "Vice President of Sales Cyber Security Jobs, Employment",
+          "url": "https://www.indeed.com/q-vice-president-of-sales-cyber-security-jobs.html",
+          "description": "50 Vice President of Sales Cyber Security jobs available on Indeed.com. Apply to Vice President of Sales, Vice President of Product, Enterprise Account ...",
+          "displayed_url": "https://www.indeed.com \u203a q-vice-president-of-sales-cybe..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 3,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.linkedin.com/jobs/vp-sales-saas-jobs",
+        "title": "1000+ Vp Sales Saas jobs in United States",
+        "snippet": "Today's top 1000+ Vp Sales Saas jobs in United States. Leverage your professional network, and get hired. New Vp Sales Saas jobs added daily.",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-saas-jobs",
+          "search_engine": "google",
+          "query": {
+            "q": "VP Sales at cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 3,
+          "title": "1000+ Vp Sales Saas jobs in United States",
+          "url": "https://www.linkedin.com/jobs/vp-sales-saas-jobs",
+          "description": "Today's top 1000+ Vp Sales Saas jobs in United States. Leverage your professional network, and get hired. New Vp Sales Saas jobs added daily.",
+          "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-saas-jobs"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 4,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.ziprecruiter.com/Jobs/Vice-President-Saas-Sales/-in-Chicago,IL",
+        "title": "$128k-$220k Vice President Saas Sales Jobs in Chicago, IL",
+        "snippet": "Browse 1000+ CHICAGO, IL VICE PRESIDENT SAAS SALES jobs ($128k-$220k) from companies now hiring with openings.",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a -in-Chicago,IL",
+          "search_engine": "google",
+          "query": {
+            "q": "VP Sales at cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 4,
+          "title": "$128k-$220k Vice President Saas Sales Jobs in Chicago, IL",
+          "url": "https://www.ziprecruiter.com/Jobs/Vice-President-Saas-Sales/-in-Chicago,IL",
+          "description": "Browse 1000+ CHICAGO, IL VICE PRESIDENT SAAS SALES jobs ($128k-$220k) from companies now hiring with openings.",
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a -in-Chicago,IL"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_01",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "VP Sales at cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_and_industry_preservation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "VP Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Preserved the original constraints to target LinkedIn profiles of individuals with the title VP Sales in the specified industry and geography."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 5,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.glassdoor.com/Job/vp-cyber-security-sales-jobs-SRCH_KO0,23.htm",
+        "title": "49 Vp cyber security sales jobs in United States",
+        "snippet": "Search Vp cyber security sales jobs. Get the right Vp cyber security sales job with company ratings & salaries. 49 open jobs for Vp cyber security sales.",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.glassdoor.com \u203a Job \u203a vp-cyber-security-sa...",
+          "search_engine": "google",
+          "query": {
+            "q": "VP Sales at cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 5,
+          "title": "49 Vp cyber security sales jobs in United States",
+          "url": "https://www.glassdoor.com/Job/vp-cyber-security-sales-jobs-SRCH_KO0,23.htm",
+          "description": "Search Vp cyber security sales jobs. Get the right Vp cyber security sales job with company ratings & salaries. 49 open jobs for Vp cyber security sales.",
+          "displayed_url": "https://www.glassdoor.com \u203a Job \u203a vp-cyber-security-sa..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 1,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.softwaresecured.com/post/cybersecurity-saas-companies",
+        "title": "The Best Cybersecurity SaaS Companies for Scaling ...",
+        "snippet": "Top 10 Recommended Cybersecurity SaaS Companies \u00b7 1) Software Secured \u00b7 2) NetSPI \u00b7 4) OWASP ZAP \u00b7 5) Sysdig \u00b7 6) Aqua Security \u00b7 7) Snyk \u2014 Docs \u00b7 8) CrowdStrike ...Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.softwaresecured.com \u203a post \u203a cybersecurity...",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 1,
+          "title": "The Best Cybersecurity SaaS Companies for Scaling ...",
+          "url": "https://www.softwaresecured.com/post/cybersecurity-saas-companies",
+          "description": "Top 10 Recommended Cybersecurity SaaS Companies \u00b7 1) Software Secured \u00b7 2) NetSPI \u00b7 4) OWASP ZAP \u00b7 5) Sysdig \u00b7 6) Aqua Security \u00b7 7) Snyk \u2014 Docs \u00b7 8) CrowdStrike ...Read more",
+          "displayed_url": "https://www.softwaresecured.com \u203a post \u203a cybersecurity..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 2,
+        "source_name": "bright_data_google_serp",
+        "url": "https://topstartups.io/?industries=Cybersecurity",
+        "title": "81 Cybersecurity Startups Funded by Sequoia, YC, A16Z ...",
+        "snippet": "Vanta is an automated security monitoring platform that helps companies get SOC 2, HIPAA, or ISO 27001 certified quickly.Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://topstartups.io \u203a industries=Cybersecurity",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 2,
+          "title": "81 Cybersecurity Startups Funded by Sequoia, YC, A16Z ...",
+          "url": "https://topstartups.io/?industries=Cybersecurity",
+          "description": "Vanta is an automated security monitoring platform that helps companies get SOC 2, HIPAA, or ISO 27001 certified quickly.Read more",
+          "displayed_url": "https://topstartups.io \u203a industries=Cybersecurity"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 3,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.ycombinator.com/companies/industry/security",
+        "title": "Security Startups funded by Y Combinator (YC) 2026",
+        "snippet": "Browse 103 of the top Security startups funded by Y Combinator.",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.ycombinator.com \u203a companies \u203a industry",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 3,
+          "title": "Security Startups funded by Y Combinator (YC) 2026",
+          "url": "https://www.ycombinator.com/companies/industry/security",
+          "description": "Browse 103 of the top Security startups funded by Y Combinator.",
+          "displayed_url": "https://www.ycombinator.com \u203a companies \u203a industry"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 4,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.getastra.com/blog/security-audit/saas-security-companies/",
+        "title": "10 Top SaaS Security Companies of 2026 (and Services)",
+        "snippet": "10 Best SaaS Security Companies \u00b7 1. Astra Security \u00b7 2. Cipher \u00b7 3. Intruder \u00b7 4. Fidelis \u00b7 5. Tenable \u00b7 6. Symantec \u00b7 7. Acunetix \u00b7 8. HackerOne.Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.getastra.com \u203a Security Audit",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 4,
+          "title": "10 Top SaaS Security Companies of 2026 (and Services)",
+          "url": "https://www.getastra.com/blog/security-audit/saas-security-companies/",
+          "description": "10 Best SaaS Security Companies \u00b7 1. Astra Security \u00b7 2. Cipher \u00b7 3. Intruder \u00b7 4. Fidelis \u00b7 5. Tenable \u00b7 6. Symantec \u00b7 7. Acunetix \u00b7 8. HackerOne.Read more",
+          "displayed_url": "https://www.getastra.com \u203a Security Audit"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_02",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "cybersecurity SaaS startups USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "founded_year"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "industry_and_geography_targeting",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on identifying companies in the specified industry and geography to find relevant company profiles."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 5,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.reddit.com/r/techsales/comments/1k3n1k5/what_are_the_top_cybersecurity_companies_out/",
+        "title": "What are the top cybersecurity companies out there right ...",
+        "snippet": "Curious which spots are the most coveted out here in 2025. I\u2019m selling medical software and it\u2019s been tough so far this year, as I\u2019m sure it\u2019s ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "40+ comments \u00b7 1 year ago",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 5,
+          "title": "What are the top cybersecurity companies out there right ...",
+          "url": "https://www.reddit.com/r/techsales/comments/1k3n1k5/what_are_the_top_cybersecurity_companies_out/",
+          "description": "Curious which spots are the most coveted out here in 2025. I\u2019m selling medical software and it\u2019s been tough so far this year, as I\u2019m sure it\u2019s ...",
+          "displayed_url": "40+ comments \u00b7 1 year ago"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 1,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.linkedin.com/in/edwardrodriguez22",
+        "title": "Edward Rodriguez - Cybersecurity & SaaS Sales Leader",
+        "snippet": "Growth-focused cybersecurity and SaaS sales leader with 20+ years building and scaling revenue from early traction to $20M+ ARR.Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "2.6K+ followers",
+          "search_engine": "google",
+          "query": {
+            "q": "Head of Sales cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 1,
+          "title": "Edward Rodriguez - Cybersecurity & SaaS Sales Leader",
+          "url": "https://www.linkedin.com/in/edwardrodriguez22",
+          "description": "Growth-focused cybersecurity and SaaS sales leader with 20+ years building and scaling revenue from early traction to $20M+ ARR.Read more",
+          "displayed_url": "2.6K+ followers"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "YES"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "YES"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "YES"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "YES"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "YES"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "YES"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 7,
+        "no_count": 3,
+        "yes_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "satisfies_explicit_query_constraints",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 2,
+        "source_name": "bright_data_google_serp",
+        "url": "https://aspironsearch.com/jobs/head-of-sales-series-a-cybersecurity/",
+        "title": "Head of Sales Role | Series A Cybersecurity",
+        "snippet": "Proven track record of exceeding sales targets in a B2B SaaS or cybersecurity environment. Experience in scaling ARR from ~$5M towards $20M+ within a venture- ...Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://aspironsearch.com \u203a jobs \u203a head-of-sales-series-a-...",
+          "search_engine": "google",
+          "query": {
+            "q": "Head of Sales cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 2,
+          "title": "Head of Sales Role | Series A Cybersecurity",
+          "url": "https://aspironsearch.com/jobs/head-of-sales-series-a-cybersecurity/",
+          "description": "Proven track record of exceeding sales targets in a B2B SaaS or cybersecurity environment. Experience in scaling ARR from ~$5M towards $20M+ within a venture- ...Read more",
+          "displayed_url": "https://aspironsearch.com \u203a jobs \u203a head-of-sales-series-a-..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 3,
+        "source_name": "bright_data_google_serp",
+        "url": "https://bebee.com/us/jobs/head-of-sales-vc-backed-b2b-cybersecurity-saas-new-york-hybrid-harmonic-finance-inc-certified-b-corp--theirstack-652165623",
+        "title": "VC-Backed B2B Cybersecurity SaaS | New York (Hybrid)",
+        "snippet": "This role requires a player-coach with deep cybersecurity sales expertise who can build and lead our client's U.S. expansion while pursuing personal quota. The ...Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://bebee.com \u203a ... \u203a Jobs \u203a Security Engineer",
+          "search_engine": "google",
+          "query": {
+            "q": "Head of Sales cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 3,
+          "title": "VC-Backed B2B Cybersecurity SaaS | New York (Hybrid)",
+          "url": "https://bebee.com/us/jobs/head-of-sales-vc-backed-b2b-cybersecurity-saas-new-york-hybrid-harmonic-finance-inc-certified-b-corp--theirstack-652165623",
+          "description": "This role requires a player-coach with deep cybersecurity sales expertise who can build and lead our client's U.S. expansion while pursuing personal quota. The ...Read more",
+          "displayed_url": "https://bebee.com \u203a ... \u203a Jobs \u203a Security Engineer"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 4,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity",
+        "title": "Saas Sales Cybersecurity Jobs (NOW HIRING)",
+        "snippet": "Browse 1000+ SAAS SALES CYBERSECURITY jobs ($35k-$80k) from companies with openings that are hiring now. Find job postings near you and ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Cyber...",
+          "search_engine": "google",
+          "query": {
+            "q": "Head of Sales cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 4,
+          "title": "Saas Sales Cybersecurity Jobs (NOW HIRING)",
+          "url": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity",
+          "description": "Browse 1000+ SAAS SALES CYBERSECURITY jobs ($35k-$80k) from companies with openings that are hiring now. Find job postings near you and ...",
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Cyber..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_03",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "Head of Sales cybersecurity SaaS startups USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "company_name",
+          "industry_or_description"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "mixed_targeting_with_title_variation",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "discovery_flow",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "title",
+              "value": "Head of Sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Targeted both person and company data by varying the title while maintaining industry and geography constraints."
+        },
+        "expected_evidence_mode": "content",
+        "risk_notes": [],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 5,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.indeed.com/q-saas-sales-cybersecurity-jobs.html",
+        "title": "Saas Sales Cybersecurity Jobs, Employment",
+        "snippet": "889 Saas Sales Cybersecurity jobs available on Indeed.com. Apply to Account Executive, Sales Executive, Technical Consultant and more!",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.indeed.com \u203a q-saas-sales-cybersecurity-jobs",
+          "search_engine": "google",
+          "query": {
+            "q": "Head of Sales cybersecurity SaaS startups USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 5,
+          "title": "Saas Sales Cybersecurity Jobs, Employment",
+          "url": "https://www.indeed.com/q-saas-sales-cybersecurity-jobs.html",
+          "description": "889 Saas Sales Cybersecurity jobs available on Indeed.com. Apply to Account Executive, Sales Executive, Technical Consultant and more!",
+          "displayed_url": "https://www.indeed.com \u203a q-saas-sales-cybersecurity-jobs"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 1,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.indeed.com/q-saas-sales-cybersecurity-jobs.html",
+        "title": "Saas Sales Cybersecurity Jobs, Employment",
+        "snippet": "889 Saas Sales Cybersecurity jobs available on Indeed.com. Apply to Account Executive, Sales Executive, Technical Consultant and more!",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.indeed.com \u203a q-saas-sales-cybersecurity-jobs",
+          "search_engine": "google",
+          "query": {
+            "q": "Sales leader cybersecurity SaaS USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 1,
+          "title": "Saas Sales Cybersecurity Jobs, Employment",
+          "url": "https://www.indeed.com/q-saas-sales-cybersecurity-jobs.html",
+          "description": "889 Saas Sales Cybersecurity jobs available on Indeed.com. Apply to Account Executive, Sales Executive, Technical Consultant and more!",
+          "displayed_url": "https://www.indeed.com \u203a q-saas-sales-cybersecurity-jobs"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 2,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity",
+        "title": "Saas Sales Cybersecurity Jobs (NOW HIRING)",
+        "snippet": "A leading cybersecurity SaaS company based in Washington is seeking a dynamic and experienced Sales Director to own and grow a strategic ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Cyber...",
+          "search_engine": "google",
+          "query": {
+            "q": "Sales leader cybersecurity SaaS USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 2,
+          "title": "Saas Sales Cybersecurity Jobs (NOW HIRING)",
+          "url": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity",
+          "description": "A leading cybersecurity SaaS company based in Washington is seeking a dynamic and experienced Sales Director to own and grow a strategic ...",
+          "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Cyber..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 3,
+        "source_name": "bright_data_google_serp",
+        "url": "https://salestalentinc.com/cybersecurity-sales-recruiters/",
+        "title": "Cybersecurity Sales Recruiters | Security Software ...",
+        "snippet": "Top Cybersecurity Sales Recruiters for high growth Security Software, Cloud Security & AI Security Companies (G2 Market Leader). #1 out of 502 recruiting firms ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://salestalentinc.com \u203a cybersecurity-sales-recruiters",
+          "search_engine": "google",
+          "query": {
+            "q": "Sales leader cybersecurity SaaS USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 3,
+          "title": "Cybersecurity Sales Recruiters | Security Software ...",
+          "url": "https://salestalentinc.com/cybersecurity-sales-recruiters/",
+          "description": "Top Cybersecurity Sales Recruiters for high growth Security Software, Cloud Security & AI Security Companies (G2 Market Leader). #1 out of 502 recruiting firms ...",
+          "displayed_url": "https://salestalentinc.com \u203a cybersecurity-sales-recruiters"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 4,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.linkedin.com/in/mikemonty",
+        "title": "Mike Montgomery - CyberSecurity-SaaS Sales Leader",
+        "snippet": "Tenured and Proven Second-Line Technology Sales Leader in the CyberSecurity-SaaS space with 10 years Sales Leadership experience and 15+ years ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "3.6K+ followers",
+          "search_engine": "google",
+          "query": {
+            "q": "Sales leader cybersecurity SaaS USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 4,
+          "title": "Mike Montgomery - CyberSecurity-SaaS Sales Leader",
+          "url": "https://www.linkedin.com/in/mikemonty",
+          "description": "Tenured and Proven Second-Line Technology Sales Leader in the CyberSecurity-SaaS space with 10 years Sales Leadership experience and 15+ years ...",
+          "displayed_url": "3.6K+ followers"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "YES"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "YES"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "YES"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "YES"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "YES"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "YES"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 8,
+        "no_count": 2,
+        "yes_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "satisfies_explicit_query_constraints",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_04",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "Sales leader cybersecurity SaaS USA",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "title_broadening_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [
+            {
+              "name": "title",
+              "value": "Sales leader",
+              "note": "Broadened from specific titles to capture a wider range of sales leadership roles."
+            }
+          ],
+          "broadening_axis": "title",
+          "rationale": "Broadened the title constraint to include various sales leadership roles while maintaining industry and geography."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 5,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.reddit.com/r/techsales/comments/1pjx7i1/anyone_in_a_hunter_role_in_cybersecurity_software/",
+        "title": "Anyone in a hunter role in cybersecurity software?",
+        "snippet": "Many of the job postings I'm seeing for AEs and sales reps in cybersecurity are all hunter roles where the expectation is to cold outbound ...",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "20+ comments \u00b7 5 months ago",
+          "search_engine": "google",
+          "query": {
+            "q": "Sales leader cybersecurity SaaS USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 5,
+          "title": "Anyone in a hunter role in cybersecurity software?",
+          "url": "https://www.reddit.com/r/techsales/comments/1pjx7i1/anyone_in_a_hunter_role_in_cybersecurity_software/",
+          "description": "Many of the job postings I'm seeing for AEs and sales reps in cybersecurity are all hunter roles where the expectation is to cold outbound ...",
+          "displayed_url": "20+ comments \u00b7 5 months ago"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 0,
+        "no_count": 10,
+        "yes_question_ids": [],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 1,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.softwaresecured.com/post/cybersecurity-saas-companies",
+        "title": "The Best Cybersecurity SaaS Companies for Scaling ...",
+        "snippet": "Top 10 Recommended Cybersecurity SaaS Companies \u00b7 1) Software Secured \u00b7 2) NetSPI \u00b7 4) OWASP ZAP \u00b7 5) Sysdig \u00b7 6) Aqua Security \u00b7 7) Snyk \u2014 Docs \u00b7 8) CrowdStrike ...Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.softwaresecured.com \u203a post \u203a cybersecurity...",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS companies USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 1,
+          "title": "The Best Cybersecurity SaaS Companies for Scaling ...",
+          "url": "https://www.softwaresecured.com/post/cybersecurity-saas-companies",
+          "description": "Top 10 Recommended Cybersecurity SaaS Companies \u00b7 1) Software Secured \u00b7 2) NetSPI \u00b7 4) OWASP ZAP \u00b7 5) Sysdig \u00b7 6) Aqua Security \u00b7 7) Snyk \u2014 Docs \u00b7 8) CrowdStrike ...Read more",
+          "displayed_url": "https://www.softwaresecured.com \u203a post \u203a cybersecurity..."
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 2,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.obsidiansecurity.com/",
+        "title": "Obsidian | End-to-End AI and SaaS Security for Enterprises",
+        "snippet": "Obsidian Security delivers complete SaaS security\u2014gain control, stop threats, and ensure compliance across all your business apps.",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.obsidiansecurity.com",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS companies USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 2,
+          "title": "Obsidian | End-to-End AI and SaaS Security for Enterprises",
+          "url": "https://www.obsidiansecurity.com/",
+          "description": "Obsidian Security delivers complete SaaS security\u2014gain control, stop threats, and ensure compliance across all your business apps.",
+          "displayed_url": "https://www.obsidiansecurity.com"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "YES"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 3,
+        "no_count": 7,
+        "yes_question_ids": [
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 3,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.getastra.com/blog/security-audit/saas-security-companies/",
+        "title": "10 Top SaaS Security Companies of 2026 (and Services)",
+        "snippet": "10 Best SaaS Security Companies \u00b7 1. Astra Security \u00b7 2. Cipher \u00b7 3. Intruder \u00b7 4. Fidelis \u00b7 5. Tenable \u00b7 6. Symantec \u00b7 7. Acunetix \u00b7 8. HackerOne.Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.getastra.com \u203a Security Audit",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS companies USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 3,
+          "title": "10 Top SaaS Security Companies of 2026 (and Services)",
+          "url": "https://www.getastra.com/blog/security-audit/saas-security-companies/",
+          "description": "10 Best SaaS Security Companies \u00b7 1. Astra Security \u00b7 2. Cipher \u00b7 3. Intruder \u00b7 4. Fidelis \u00b7 5. Tenable \u00b7 6. Symantec \u00b7 7. Acunetix \u00b7 8. HackerOne.Read more",
+          "displayed_url": "https://www.getastra.com \u203a Security Audit"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 4,
+        "source_name": "bright_data_google_serp",
+        "url": "https://topstartups.io/?industries=Cybersecurity",
+        "title": "81 Cybersecurity Startups Funded by Sequoia, YC, A16Z ...",
+        "snippet": "Vanta is an automated security monitoring platform that helps companies get SOC 2, HIPAA, or ISO 27001 certified quickly.Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://topstartups.io \u203a industries=Cybersecurity",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS companies USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 4,
+          "title": "81 Cybersecurity Startups Funded by Sequoia, YC, A16Z ...",
+          "url": "https://topstartups.io/?industries=Cybersecurity",
+          "description": "Vanta is an automated security monitoring platform that helps companies get SOC 2, HIPAA, or ISO 27001 certified quickly.Read more",
+          "displayed_url": "https://topstartups.io \u203a industries=Cybersecurity"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    },
+    {
+      "prompt_version": "b2b_contact_data_default_v1",
+      "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "expansion": {
+        "expansion_id": "exp_001_05",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "cybersecurity SaaS companies USA",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "employee_count"
+        ],
+        "exclusions": [],
+        "expansion_trace": {
+          "recipe_name": "company_discovery_with_industry_focus",
+          "paradigms": [
+            "intent_and_terminology",
+            "entity_targeting",
+            "source_lane_targeting",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "Focused on discovering company profiles in the specified industry and geography to gather comprehensive company data."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "natural_language",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {}
+      },
+      "retrieved_candidate": {
+        "rank": 5,
+        "source_name": "bright_data_google_serp",
+        "url": "https://www.gartner.com/reviews/product/saas-security/alternatives",
+        "title": "Top SaaS Security Alternatives & Competitors 2026",
+        "snippet": "1. Zscaler Zero Trust Exchange \u00b7 2. Cisco Secure Client \u00b7 3. Netskope One SSE \u00b7 4. FortiClient \u00b7 5. Forcepoint ONE \u00b7 6. Microsoft Defender for Cloud Apps \u00b7 7. Prisma ...Read more",
+        "content": null,
+        "structured_fields": {
+          "displayed_url": "https://www.gartner.com \u203a Home \u203a SaaS Security",
+          "search_engine": "google",
+          "query": {
+            "q": "cybersecurity SaaS companies USA",
+            "location": "United States",
+            "language": "en"
+          },
+          "country": "United States",
+          "total_found": null,
+          "results_per_page": 10
+        },
+        "raw": {
+          "position": 5,
+          "title": "Top SaaS Security Alternatives & Competitors 2026",
+          "url": "https://www.gartner.com/reviews/product/saas-security/alternatives",
+          "description": "1. Zscaler Zero Trust Exchange \u00b7 2. Cisco Secure Client \u00b7 3. Netskope One SSE \u00b7 4. FortiClient \u00b7 5. Forcepoint ONE \u00b7 6. Microsoft Defender for Cloud Apps \u00b7 7. Prisma ...Read more",
+          "displayed_url": "https://www.gartner.com \u203a Home \u203a SaaS Security"
+        }
+      },
+      "judge_result": {
+        "answers": [
+          {
+            "question_id": "is_b2b_contact_data_candidate",
+            "answer": "NO"
+          },
+          {
+            "question_id": "matches_requested_entity_type",
+            "answer": "NO"
+          },
+          {
+            "question_id": "satisfies_explicit_query_constraints",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_core_identity_fields",
+            "answer": "NO"
+          },
+          {
+            "question_id": "exposes_useful_extra_b2b_field",
+            "answer": "NO"
+          },
+          {
+            "question_id": "credited_fields_visible_in_evidence",
+            "answer": "NO"
+          },
+          {
+            "question_id": "suitable_professional_or_company_source",
+            "answer": "NO"
+          },
+          {
+            "question_id": "shows_current_professional_or_company_context",
+            "answer": "NO"
+          },
+          {
+            "question_id": "free_of_known_noise_page_types",
+            "answer": "YES"
+          },
+          {
+            "question_id": "free_of_visible_wrong_match_failures",
+            "answer": "NO"
+          }
+        ]
+      },
+      "boolean_summary": {
+        "yes_count": 1,
+        "no_count": 9,
+        "yes_question_ids": [
+          "free_of_known_noise_page_types"
+        ],
+        "no_question_ids": [
+          "is_b2b_contact_data_candidate",
+          "matches_requested_entity_type",
+          "satisfies_explicit_query_constraints",
+          "exposes_core_identity_fields",
+          "exposes_useful_extra_b2b_field",
+          "credited_fields_visible_in_evidence",
+          "suitable_professional_or_company_source",
+          "shows_current_professional_or_company_context",
+          "free_of_visible_wrong_match_failures"
+        ]
+      }
+    }
+  ],
+  "completed_at": "2026-05-13T19:35:07.255794+00:00"
+}

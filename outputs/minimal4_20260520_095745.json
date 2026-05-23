@@ -1,0 +1,136 @@
+{
+  "run_id": "20260520_095745",
+  "started_at": "2026-05-20T09:57:45.965005+00:00",
+  "completed_at": "2026-05-20T09:58:21.871298+00:00",
+  "elapsed_seconds": 35.906293,
+  "query_spec": {
+    "natural_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+    "entity_type": "person_profile",
+    "industry": "cybersecurity SaaS",
+    "geography": "United States",
+    "company_type": "startup",
+    "role_title_family": "sales_leadership",
+    "seniority_band": "vp",
+    "department_or_function": "sales"
+  },
+  "paradigm_seeds": [
+    "title_broadening",
+    "industry_broadening",
+    "geography_broadening",
+    "combined_broadening"
+  ],
+  "variants_per_seed": 3,
+  "expected_llm_count": 12,
+  "actual_llm_count": 12,
+  "total_variants": 13,
+  "serp_results_per_variant": 5,
+  "serp_location": "United States",
+  "serp_language": "en",
+  "serp_device": "desktop",
+  "variants": [
+    {
+      "seeds": [
+        "verbatim"
+      ],
+      "query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "rationale": "Baseline: the natural query without any broadening.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include full form and alternative title structures for VP Sales.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include functional synonyms for Head of Sales.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include C-suite forms and executive-level titles.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+      "rationale": "This variant broadens the industry to include the general term 'cybersecurity' without specifying SaaS.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS security\" \"United States\"",
+      "rationale": "This variant broadens the industry to include 'SaaS security' as a related field.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"information security SaaS\" \"United States\"",
+      "rationale": "This variant broadens the industry to include 'information security SaaS' as a related sector.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+      "rationale": "This variant broadens the geography to include abbreviations for the United States.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+      "rationale": "This variant broadens the geography to include the regional term 'North America'.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+      "rationale": "This variant broadens the geography to include state-level alternatives like California, New York, and Texas.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+      "rationale": "This variant combines title and geography broadening by using alternative titles and regional terms.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"Chief Sales Officer\" OR \"CSO\") \"SaaS security\" \"United States\"",
+      "rationale": "This variant combines title and industry broadening by using C-suite titles and related industry terms.",
+      "serp_results": []
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"Sales Executive\" OR \"Sales Leader\") \"information security SaaS\" (\"US\" OR \"California\")",
+      "rationale": "This variant combines title, industry, and geography broadening by using executive titles, related industry terms, and state-level alternatives.",
+      "serp_results": []
+    }
+  ]
+}

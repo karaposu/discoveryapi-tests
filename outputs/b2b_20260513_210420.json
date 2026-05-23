@@ -1,0 +1,674 @@
+{
+  "run_id": "b2b_20260513_210420",
+  "started_at": "2026-05-13T21:04:20.656027+00:00",
+  "query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+  "retrieval_method": "bright_data_google_serp",
+  "skip_judge": false,
+  "experiment_config": {
+    "category": "b2b_contact_data",
+    "model": "gpt-4o",
+    "prompt_version": "b2b_contact_data_default_v1",
+    "num_expansions": 5,
+    "allowed_entity_types": [
+      "person_profile",
+      "company_profile",
+      "mixed_person_company"
+    ],
+    "allowed_source_lanes": [
+      "linkedin_person",
+      "linkedin_company",
+      "crunchbase_person",
+      "crunchbase_company",
+      "company_team_page",
+      "general_web"
+    ],
+    "allowed_evidence_modes": [
+      "snippet_only",
+      "content",
+      "structured_enrichment"
+    ],
+    "allowed_target_fields": [
+      "person_name",
+      "current_title",
+      "current_company",
+      "profile_or_source_url",
+      "evidence_source",
+      "location",
+      "seniority",
+      "department_or_function",
+      "work_history",
+      "professional_summary",
+      "company_name",
+      "company_domain_or_profile_url",
+      "industry_or_description",
+      "headquarters_or_location",
+      "headcount_or_company_size",
+      "funding",
+      "investors",
+      "employee_count",
+      "founded_year",
+      "growth_signal",
+      "relevant_employee_or_profile_links"
+    ],
+    "allowed_exclusions": [
+      "job_postings",
+      "career_advice",
+      "resume_templates",
+      "hr_software_pages",
+      "recruiting_software_pages",
+      "staffing_agency_marketing_pages",
+      "generic_hr_blogs",
+      "unsupported_lead_directories"
+    ],
+    "max_query_length": null,
+    "fixed_retrieval_method": "bright_data_google_serp",
+    "fixed_result_count": 10,
+    "locale": "United States"
+  },
+  "combinations": [
+    {
+      "label": "linkedin_person_strict",
+      "recipe_name": "Source-Aware Person-First",
+      "paradigms": [
+        "source_lane_targeting",
+        "entity_targeting",
+        "discovery_flow",
+        "noise_control",
+        "query_syntax_shaping"
+      ],
+      "parameters": {
+        "entity_type": "person_profile",
+        "discovery_flow": "person_first",
+        "source_lane": "linkedin_person",
+        "role_title_family": "sales_leadership",
+        "seniority_band": "vp",
+        "department_or_function": "sales",
+        "industry": "cybersecurity SaaS",
+        "geography": "United States",
+        "company_type": null,
+        "company_size_or_stage": null,
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expected_evidence_mode": "snippet_only",
+        "syntax_strategy": "site_operator",
+        "field_intent": "identity",
+        "exclusion_strength": "strict"
+      }
+    },
+    {
+      "label": "linkedin_person_boolean_or",
+      "recipe_name": "Broad Semantic Recall",
+      "paradigms": [
+        "intent_and_terminology",
+        "source_lane_targeting",
+        "query_syntax_shaping",
+        "noise_control"
+      ],
+      "parameters": {
+        "entity_type": "person_profile",
+        "discovery_flow": "person_first",
+        "source_lane": "linkedin_person",
+        "role_title_family": "sales_leadership",
+        "seniority_band": "vp",
+        "department_or_function": "sales",
+        "industry": "cybersecurity SaaS",
+        "geography": "United States",
+        "company_type": null,
+        "company_size_or_stage": null,
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expected_evidence_mode": "snippet_only",
+        "syntax_strategy": "boolean_or",
+        "field_intent": "identity",
+        "exclusion_strength": "moderate"
+      }
+    },
+    {
+      "label": "linkedin_company",
+      "recipe_name": "Source-Aware Company-First",
+      "paradigms": [
+        "entity_targeting",
+        "discovery_flow",
+        "source_lane_targeting",
+        "field_and_evidence_targeting"
+      ],
+      "parameters": {
+        "entity_type": "company_profile",
+        "discovery_flow": "company_first",
+        "source_lane": "linkedin_company",
+        "role_title_family": null,
+        "seniority_band": null,
+        "department_or_function": null,
+        "industry": "cybersecurity SaaS",
+        "geography": "United States",
+        "company_type": "startup",
+        "company_size_or_stage": null,
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expected_evidence_mode": "snippet_only",
+        "syntax_strategy": "site_operator",
+        "field_intent": "firmographics",
+        "exclusion_strength": "moderate"
+      }
+    },
+    {
+      "label": "crunchbase_company",
+      "recipe_name": "Field-Intent Enriched-Data",
+      "paradigms": [
+        "field_and_evidence_targeting",
+        "source_lane_targeting",
+        "tool_and_evidence_mode_targeting"
+      ],
+      "parameters": {
+        "entity_type": "company_profile",
+        "discovery_flow": "company_first",
+        "source_lane": "crunchbase_company",
+        "role_title_family": null,
+        "seniority_band": null,
+        "department_or_function": null,
+        "industry": "cybersecurity SaaS",
+        "geography": "United States",
+        "company_type": "startup",
+        "company_size_or_stage": null,
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expected_evidence_mode": "structured_enrichment",
+        "syntax_strategy": "site_operator",
+        "field_intent": "firmographics",
+        "exclusion_strength": "light"
+      }
+    },
+    {
+      "label": "general_web_exclusion_heavy",
+      "recipe_name": "Exclusion-Heavy Precision",
+      "paradigms": [
+        "noise_control",
+        "query_syntax_shaping",
+        "constraint_handling"
+      ],
+      "parameters": {
+        "entity_type": "mixed_person_company",
+        "discovery_flow": "mixed",
+        "source_lane": "general_web",
+        "role_title_family": "sales_leadership",
+        "seniority_band": "vp",
+        "department_or_function": null,
+        "industry": "cybersecurity SaaS",
+        "geography": "United States",
+        "company_type": null,
+        "company_size_or_stage": null,
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function",
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expected_evidence_mode": "snippet_only",
+        "syntax_strategy": "negative_terms",
+        "field_intent": "identity",
+        "exclusion_strength": "strict"
+      }
+    }
+  ],
+  "expansion_result": {
+    "result_id": "combo_b2b_20260513_210420",
+    "category": "b2b_contact_data",
+    "model": "gpt-4o",
+    "prompt_version": "b2b_contact_data_default_v1",
+    "original_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+    "expansions": [
+      {
+        "expansion_id": "exp_01_linkedin_person_strict",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "site:linkedin.com/in \"VP Sales\" OR \"Head of Sales\" \"cybersecurity SaaS\" \"United States\" -jobs -hiring -\"job posting\" -careers -\"career advice\" -\"resume tips\" -resume -\"resume template\" -workday -greenhouse -lever -recruiter -\"applicant tracking\" -staffing -\"staffing agency\" -blog -tips -zoominfo -apollo -rocketreach",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expansion_trace": {
+          "recipe_name": "Source-Aware Person-First",
+          "paradigms": [
+            "source_lane_targeting",
+            "entity_targeting",
+            "discovery_flow",
+            "noise_control",
+            "query_syntax_shaping"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "role_title_family",
+              "value": "sales_leadership",
+              "note": null
+            },
+            {
+              "name": "seniority_band",
+              "value": "vp",
+              "note": null
+            },
+            {
+              "name": "department_or_function",
+              "value": "sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "The query targets LinkedIn profiles of individuals in sales leadership roles, specifically VP or Head of Sales, within the cybersecurity SaaS industry in the United States. Strict exclusions are applied to filter out irrelevant results from job postings, career advice, and other non-target pages."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [
+          "Strict exclusions may filter out some relevant profiles if they are associated with excluded terms."
+        ],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "site_operator",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {
+          "combination_label": "linkedin_person_strict"
+        }
+      },
+      {
+        "expansion_id": "exp_02_linkedin_person_boolean_or",
+        "entity_type": "person_profile",
+        "source_lane": "linkedin_person",
+        "query": "site:linkedin.com/in (\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"United States\" -jobs -hiring -\"job posting\" -careers -\"career advice\" -\"resume tips\" -resume -\"resume template\"",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expansion_trace": {
+          "recipe_name": "Broad Semantic Recall",
+          "paradigms": [
+            "intent_and_terminology",
+            "source_lane_targeting",
+            "query_syntax_shaping",
+            "noise_control"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "role_title_family",
+              "value": "sales_leadership",
+              "note": null
+            },
+            {
+              "name": "seniority_band",
+              "value": "vp",
+              "note": null
+            },
+            {
+              "name": "department_or_function",
+              "value": "sales",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "The query uses the site: operator to target LinkedIn profiles, employs a boolean OR strategy to capture alternative titles, and includes moderate exclusions to filter out irrelevant results like job postings and HR-related content. All constraints from the combination are preserved, ensuring the search remains focused on the specified industry, geography, and role."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [
+          "The use of moderate exclusions may still allow some irrelevant results to appear, but it balances recall and precision."
+        ],
+        "discovery_flow": "person_first",
+        "syntax_strategy": "boolean_or",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {
+          "combination_label": "linkedin_person_boolean_or"
+        }
+      },
+      {
+        "expansion_id": "exp_03_linkedin_company",
+        "entity_type": "company_profile",
+        "source_lane": "linkedin_company",
+        "query": "site:linkedin.com/company \"cybersecurity SaaS\" \"United States\" startup -jobs -hiring -\"job posting\" -careers -\"career advice\" -\"resume tips\"",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expansion_trace": {
+          "recipe_name": "Source-Aware Company-First",
+          "paradigms": [
+            "entity_targeting",
+            "discovery_flow",
+            "source_lane_targeting",
+            "field_and_evidence_targeting"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            },
+            {
+              "name": "company_type",
+              "value": "startup",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "The query targets LinkedIn company profiles in the cybersecurity SaaS industry within the United States, focusing on startups. The exclusion terms are applied to filter out irrelevant job postings and HR-related content, aligning with the moderate exclusion strength."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [
+          "The exclusion of job postings and HR content may inadvertently filter out some relevant company profiles that mention these terms in a different context."
+        ],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "site_operator",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {
+          "combination_label": "linkedin_company"
+        }
+      },
+      {
+        "expansion_id": "exp_04_crunchbase_company",
+        "entity_type": "company_profile",
+        "source_lane": "crunchbase_company",
+        "query": "site:crunchbase.com/organization \"cybersecurity SaaS\" \"United States\" startup",
+        "target_fields": [
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expansion_trace": {
+          "recipe_name": "Field-Intent Enriched-Data",
+          "paradigms": [
+            "field_and_evidence_targeting",
+            "source_lane_targeting",
+            "tool_and_evidence_mode_targeting"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "source_lane",
+              "value": "crunchbase_company",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            },
+            {
+              "name": "company_type",
+              "value": "startup",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "The query targets Crunchbase company profiles specifically in the cybersecurity SaaS industry within the United States, focusing on startups. The site: operator ensures results are limited to Crunchbase, aligning with the source_lane constraint. The exclusion strength is light, so no negative terms are applied, keeping the query focused and relevant."
+        },
+        "expected_evidence_mode": "structured_enrichment",
+        "risk_notes": [
+          "The query may return broader results than intended due to the absence of specific role or seniority constraints."
+        ],
+        "discovery_flow": "company_first",
+        "syntax_strategy": "site_operator",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {
+          "combination_label": "crunchbase_company"
+        }
+      },
+      {
+        "expansion_id": "exp_05_general_web_exclusion_heavy",
+        "entity_type": "mixed_person_company",
+        "source_lane": "general_web",
+        "query": "\"VP Sales\" OR \"Head of Sales\" \"cybersecurity SaaS\" \"United States\" -jobs -hiring -\"job posting\" -careers -\"career advice\" -\"resume tips\" -resume -\"resume template\" -workday -greenhouse -lever -recruiter -\"applicant tracking\" -staffing -\"staffing agency\" -blog -tips -zoominfo -apollo -rocketreach",
+        "target_fields": [
+          "person_name",
+          "current_title",
+          "current_company",
+          "profile_or_source_url",
+          "location",
+          "seniority",
+          "department_or_function",
+          "company_name",
+          "company_domain_or_profile_url",
+          "industry_or_description",
+          "headquarters_or_location",
+          "headcount_or_company_size",
+          "funding",
+          "founded_year"
+        ],
+        "exclusions": [
+          "job_postings",
+          "career_advice",
+          "resume_templates",
+          "hr_software_pages",
+          "recruiting_software_pages",
+          "staffing_agency_marketing_pages",
+          "generic_hr_blogs",
+          "unsupported_lead_directories"
+        ],
+        "expansion_trace": {
+          "recipe_name": "Exclusion-Heavy Precision",
+          "paradigms": [
+            "noise_control",
+            "query_syntax_shaping",
+            "constraint_handling"
+          ],
+          "preserved_constraints": [
+            {
+              "name": "role_title_family",
+              "value": "sales_leadership",
+              "note": null
+            },
+            {
+              "name": "seniority_band",
+              "value": "vp",
+              "note": null
+            },
+            {
+              "name": "industry",
+              "value": "cybersecurity SaaS",
+              "note": null
+            },
+            {
+              "name": "geography",
+              "value": "United States",
+              "note": null
+            }
+          ],
+          "broadened_constraints": [],
+          "broadening_axis": "none",
+          "rationale": "The query uses strict exclusion terms to filter out irrelevant results such as job postings, career advice, and HR-related content, ensuring precision in identifying sales leadership roles in the cybersecurity SaaS industry within the United States. The constraints on role, industry, and geography are preserved to maintain focus on the target audience."
+        },
+        "expected_evidence_mode": "snippet_only",
+        "risk_notes": [
+          "The use of strict exclusions may inadvertently filter out some relevant pages that mention these terms in a different context."
+        ],
+        "discovery_flow": "mixed",
+        "syntax_strategy": "negative_terms",
+        "enrichment_hint": null,
+        "diagnostic_purpose": null,
+        "metadata": {
+          "combination_label": "general_web_exclusion_heavy"
+        }
+      }
+    ],
+    "generation_notes": "One LLM call per pre-built combination in EXPANSION_COMBINATIONS."
+  },
+  "records": [],
+  "completed_at": "2026-05-13T21:04:47.338091+00:00"
+}

@@ -1,0 +1,1449 @@
+{
+  "run_id": "20260520_104200",
+  "started_at": "2026-05-20T10:42:00.497854+00:00",
+  "completed_at": "2026-05-20T10:43:04.026277+00:00",
+  "elapsed_seconds": 63.528423,
+  "query_spec": {
+    "natural_query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+    "entity_type": "person_profile",
+    "industry": "cybersecurity SaaS",
+    "geography": "United States",
+    "company_type": "startup",
+    "role_title_family": "sales_leadership",
+    "seniority_band": "vp",
+    "department_or_function": "sales"
+  },
+  "paradigm_seeds": [
+    "title_broadening",
+    "industry_broadening",
+    "geography_broadening",
+    "combined_broadening"
+  ],
+  "variants_per_seed": 3,
+  "expected_llm_count": 12,
+  "actual_llm_count": 12,
+  "total_variants": 13,
+  "serp_results_per_variant": 5,
+  "serp_location": "United States",
+  "serp_language": "en",
+  "serp_device": "desktop",
+  "variants": [
+    {
+      "seeds": [
+        "verbatim"
+      ],
+      "query": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+      "rationale": "Baseline: the natural query without any broadening.",
+      "serp_results": [
+        {
+          "link": "https://aspironsearch.com/jobs/head-of-sales-series-a-cybersecurity/",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Head of Sales Role | Series A Cybersecurity",
+            "displayed_url": "https://aspironsearch.com \u203a jobs \u203a head-of-sales-series-a-...",
+            "search_engine": "google",
+            "query": {
+              "q": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VendorExplore the Head of Sales role at a Series A cybersecurity company. Learn key responsibilities, leadership expectations, and growth opportunities.",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.indeed.com/q-vice-president-of-sales-cyber-security-jobs.html",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Vice President of Sales Cyber Security Jobs, Employment",
+            "displayed_url": "https://www.indeed.com \u203a q-vice-president-of-sales-cybe...",
+            "search_engine": "google",
+            "query": {
+              "q": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "822 Vice President of Sales Cyber Security jobs available on Indeed.com. Apply to Vice President, Vice President of Sales, Vice President, Product Manager ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/in/jimmy-phipps-797a6162",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Jimmy Phipps - Scaling SaaS & Cybersecurity Companies",
+            "displayed_url": "5.3K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Jimmy Phipps \u00b7 VP of Sales | Scaling SaaS & Cybersecurity Companies | GTM Builder | Enterprise Growth Leader | MEDDPICC \u00b7 View mutual connections with Jimmy.",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Saas Sales Cybersecurity Jobs (NOW HIRING)",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Cyber...",
+            "search_engine": "google",
+            "query": {
+              "q": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Browse 1000+ SAAS SALES CYBERSECURITY jobs ($35k-$80k) from companies with openings that are hiring now. Find job postings near you and ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.builtinnyc.com/jobs/sales/cybersecurity",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Best Cybersecurity Sales Jobs in New York City, NY 2026",
+            "displayed_url": "https://www.builtinnyc.com \u203a jobs \u203a sales \u203a cybersecurity",
+            "search_engine": "google",
+            "query": {
+              "q": "VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Search the best Cybersecurity Sales Jobs from top companies & startups in New York City, NY. New jobs added daily.",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include full forms and alternative phrasings of 'VP Sales'.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/in/rudyricci",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Rudy Ricci - VP Sales | Cybersecurity SaaS",
+            "displayed_url": "7K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales | Cybersecurity SaaS | CRO-Scope GTM Leadership | BeyondTrust ... United States \u00b7 500+ connections on LinkedIn. View Rudy Ricci's profile on ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://careersteer.com/jobs/listing/austin-texas-united-states/hypori/vice-president-of-sales/k5739ppnsgv0ybpna7m59pfc5585m0x8",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Vice President of Sales at Hypori - Austin, Texas, United States",
+            "displayed_url": "https://careersteer.com \u203a jobs \u203a listing \u203a vice-president-of...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... Vice President of Sales position at Hypori in Austin, Texas, United States ... cybersecurity / saas, based in Austin, Texas, United States.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.glassdoor.com/Job/sales-vp-saas-jobs-SRCH_KO0,13.htm",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "1424 Sales vp saas jobs in United States",
+            "displayed_url": "https://www.glassdoor.com \u203a Job \u203a sales-vp-saas-jobs-S...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "1,424 Sales vp saas jobs in United States. Most ... 5+ years in B2B sales, preferably within cybersecurity, SaaS, or MSSP\u2026&hellip; ... People who searched for jobs ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://builtin.com/job/vp-sales-west-enterprise/7734544",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "VP Sales, West Enterprise - BeyondTrust",
+            "displayed_url": "https://builtin.com \u203a job \u203a vp-sales-west-enterprise",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales, West Enterprise ... cybersecurity SaaS portfolio. Our culture of ... Staff Software Engineer. Fintech \u2022 Software. Remote or Hybrid. United States. 1750 ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.builtinboston.com/jobs/sales/senior/cybersecurity",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Top Senior Level Cybersecurity Sales Jobs in Boston, MA",
+            "displayed_url": "https://www.builtinboston.com \u203a jobs \u203a cybersecurity",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Vice President of Sales\" OR \"Sales VP\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales, Commercial. Reposted 3 Days AgoSaved. Easy Apply. Remote or Hybrid ... United States. 350K-380K Annually. Senior level. 350K-380K Annually. Senior ...Read more",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include functional synonyms for 'Head of Sales'.",
+      "serp_results": [
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Director-Remote/-in-Washington,DC",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "$79k-$186k Saas Sales Director Remote Jobs in Washington, DC",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a -in-Washington,DC",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Sales Director (Cybersecurity SaaS) ... United States. HOURS & TIME ZON E: Monday ... All JobsAll Jobs Saas Sales Director Remote JobsSaas Sales ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.whatjobs.com/jobs/sales-director-cybersecurity-saas?id=2652796632",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "What Sales Director Cybersecurity Saas Jobs Are Near Me?",
+            "displayed_url": "https://www.whatjobs.com \u203a jobs \u203a sales-director-cyberse...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "What Sales Director Cybersecurity Saas Jobs are in the United States? Showing 0 Sales Director Cybersecurity Saas jobs in the United States. Sorry to hear ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.talent.com/view?id=610994345465939378",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Sales Director (Cybersecurity SaaS) \u2013 Iopa Solutions",
+            "displayed_url": "https://www.talent.com \u203a view",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Sales Director (Cybersecurity SaaS). Iopa Solutions \u2022 Washington, DC, United States. 30+ days ago.",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/in/tedwintz",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Ted Wintz - Proven Sales Leader I CyberSecurity/Saas ...",
+            "displayed_url": "5.6K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Proven Sales Leader I CyberSecurity/Saas Services I Driving Revenue Growth I Enterprise Account Management ... San Diego County, California, United States.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.remoterocketship.com/us/company/axonius/jobs/area-sales-director-florida-remote/",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Area Sales Director at Axonius - United States Remote",
+            "displayed_url": "https://www.remoterocketship.com \u203a axonius \u203a jobs \u203a a...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Director\" OR \"Sales Leader\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... cybersecurity, SaaS, or cloud technology sectors. \u2022 Documented track ... Technical Sales Leader for national accounts at G&G Industrial Lighting.Read more",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "title_broadening"
+      ],
+      "query": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+      "rationale": "This variant broadens the title to include C-suite forms and executive-level synonyms.",
+      "serp_results": [
+        {
+          "link": "https://www.jobleads.com/us/job/enterprise-cybersecurity-saas-sales-executive--united-states--e395a6733881e9bdc2f3150778aa5de52",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Enterprise Cybersecurity SaaS Sales Executive",
+            "displayed_url": "https://www.jobleads.com \u203a job \u203a enterprise-cybersecurit...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "DeleteMe is hiring Enterprise Cybersecurity SaaS Sales Executive in United States. Apply now with JobLeads!",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/jobs/view/cybersecurity-lead-generation-sales-executive-100%25-commission-at-xcigence-4400942702",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Cybersecurity Lead Generation & Sales Executive (100% ...",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a view \u203a cybersecurity-l...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Proven track record in cybersecurity, SaaS, or enterprise technology sales ... Get notified about new Lead Generation Executive jobs in United States. Sign ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.talent.com/view?id=614256909993771732",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Senior MSP Cybersecurity SaaS Sales Executive",
+            "displayed_url": "https://www.talent.com \u203a view",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Senior MSP Cybersecurity SaaS Sales Executive. Senior MSP Cybersecurity SaaS Sales Executive. Inforcer \u2022 Cerritos, CA, United States. 11 days ago. Apply.",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.builtinla.com/jobs/remote/sales/search/sales-executive?page=3",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Best Remote Sales Executive Jobs in Los Angeles, CA 2026",
+            "displayed_url": "https://www.builtinla.com \u203a jobs \u203a remote \u203a sales \u203a search",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Enterprise Sales Executive. Reposted 6 Days AgoSaved. Remote. United States of America. 170K-180K Annually. Expert/Leader. 170K-180K Annually. Expert/Leader.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://workinvirtual.com/job/enterprise-account-executive-cybersecurity-saas-channel-sales-enterprise-growth-us-remote-central-east-75k-125k-uncapped-commission/",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Cybersecurity SaaS, Channel Sales & Enterprise Growth",
+            "displayed_url": "https://workinvirtual.com \u203a job \u203a enterprise-account-ex...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\" OR \"Sales Executive\") \"cybersecurity SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... Cybersecurity SaaS, Channel Sales ... sales executive usa, software sales executive usa ... United States, Canada (Remote); Praia Health; Full ...",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+      "rationale": "This variant broadens the industry to include the general 'cybersecurity' sector.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/jobs/vp-sales-cybersecurity-jobs",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "361 Vp Sales Cybersecurity jobs in United States",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-cybersecurity...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Today's top 361 Vp Sales Cybersecurity jobs in United States. Leverage your ... Head of Sales and Business Development jobs \u00b7 Sales Director jobs \u00b7 Chief ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/jobs/vp-sales-cybersecurity-jobs-new-york-ny",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "26 Vp Sales Cybersecurity jobs in New York ...",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-cybersecurity...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Get notified about new Vp Sales Cybersecurity jobs in New York, New York, United States. ... Head of Sales and Business Development jobs \u00b7 Sales Director ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://startup.jobs/vp-sales-central-safe-security-5327175",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "VP Sales, Central at Safe Security",
+            "displayed_url": "https://startup.jobs \u203a vp-sales-central-safe-security-5327...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Apply now for VP Sales, Central job at Safe Security (REMOTE). \u2013\u2013\u2013 Ready to join a rocket ship that is revolutionizing the cyber risk management industry?",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.builtinnyc.com/job/vice-president-international-head-sales-strategy/8750039",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Vice President International Head of Sales Strategy",
+            "displayed_url": "https://www.builtinnyc.com \u203a TransUnion \u203a Jobs",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "The Head of Sales Strategy and Vertical Expansion is responsible for driving revenue growth through the development and execution of ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://jobright.ai/jobs/cybersecurity-co-founder-head-of-sales-(100-remote)-(m-f-d)-jobs-in-united-states",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Cybersecurity Co Founder Head Of Sales (100 Remote) (m F D) ...",
+            "displayed_url": "https://jobright.ai \u203a jobs \u203a cybersecurity-co-founder-head...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Best Cybersecurity Co Founder Head Of Sales (100 Remote) (m F D) jobs available in United States on jobright.ai. Apply to Cybersecurity Co Founder Head Of Sales",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+      "rationale": "This variant focuses on the broader 'SaaS' industry, removing the specific 'cybersecurity' focus.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/jobs/vp-sales-saas-jobs",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "1000+ Vp Sales Saas jobs in United States",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-saas-jobs",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Today's top 1000+ Vp Sales Saas jobs in United States. Leverage your ... Head of Sales and Business Development jobs \u00b7 Sales Director jobs \u00b7 Chief Revenue ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.glassdoor.com/Job/vp-sales-saas-jobs-SRCH_KO0,13.htm",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "1621 Vp sales saas jobs in United States",
+            "displayed_url": "https://www.glassdoor.com \u203a Job \u203a vp-sales-saas-jobs-S...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "1,621 Vp sales saas jobs in United States. Most relevant. Throttlenet. Senior Sales Associate. Saint Louis, MO. $130K - $180K (Employer provided). Easy Apply.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Salaries/Vp-Sales-Saas-Salary",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Salary: Vp Sales Saas (May, 2026) United States",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Salaries \u203a Vp-Sales-Saas...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "The average VP SALES SAAS SALARY in the United States as of May 2026 is $79.77 an hour or $165921 per year. Get paid what you're worth!",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.indeed.com/q-head-of-sales-saas-ai-jobs.html",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Head of Sales Saas Ai Jobs, Employment",
+            "displayed_url": "https://www.indeed.com \u203a q-head-of-sales-saas-ai-jobs",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... Head of Sales Saas Ai jobs available on Indeed.com. Apply to Account ... VP Sales. Easily apply. DualEntry. United States. $250,000 - $350,000 a year.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.thesaasjobs.com/jobs/468282519-vp-sales-americas",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "VP Sales, Americas at Cohere",
+            "displayed_url": "https://www.thesaasjobs.com \u203a jobs \u203a 468282519-vp-sale...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "The SaaS Jobs \u00b7 Jobs \u00b7 Companies \u00b7 Profiles \u00b7 Pricing ... VP Sales ... United States) \u2022 $239k - $265k / year \u2022 3d ago. Sales Senior level. 3d ago. Apply. Pigment ...",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "industry_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+      "rationale": "This variant broadens the industry to include 'tech startups' as a general category.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/in/simonbrief",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Simon B. - Head of Sales for Startups @ Google Cloud",
+            "displayed_url": "2.3K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales for Startups @ Google Cloud. Google NYU Stern School of Business. New York, New York, United States. 2K followers 500+ connections. See your ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Head-Of-Startups",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "$50k-$95k Head Of Startups Jobs (NOW HIRING) May 2026",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Head-Of-Startups",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales - Hands-On Closer & Team Builder [Confidential SaaS ... years of experience in growth or product marketing within tech startups and ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://wellfound.com/jobs/1279026-head-of-sales-saas-sales-veteran",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Head of sales - SaaS sales veteran at Shake \u2022 New York City",
+            "displayed_url": "https://wellfound.com \u203a jobs \u203a 1279026-head-of-sales-s...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Shake is hiring a Head of sales - SaaS sales veteran in New York City and United States - Apply now on Wellfound ... Tech Startups \u00b7 Remote. For Recruiters ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://joseflegal.com/careers/head-of-sales-north-america/",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "We're hiring a Head of Sales (North America) | Careers at Josef | Josef",
+            "displayed_url": "https://joseflegal.com \u203a careers \u203a head-of-sales-north-a...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales (North America) ... United States or Canada (distributed team, so flexible on exact location) ... This is a transformative opportunity to play a ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/in/alexyusalesleadermba",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Alex Y - VP Sales | Head of Sales | SaaS, AI, Fintech ...",
+            "displayed_url": "2.1K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"tech startups\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales | Head of Sales | SaaS, AI, Fintech, Healthtech. Head X Group University of Arizona. Rancho Cordova, California, United States. 2K followers 500+ ...Read more",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+      "rationale": "This variant broadens the geography to include common abbreviations for the United States.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/in/rudyricci",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Rudy Ricci - VP Sales | Cybersecurity SaaS",
+            "displayed_url": "7K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales | Cybersecurity SaaS | CRO-Scope GTM Leadership | BeyondTrust ... US, UK, and Middle East. Operating as de facto CRO, I align Sales, Marketing ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://bebee.com/us/jobs/head-of-sales-vc-backed-b2b-cybersecurity-saas-new-york-hybrid-harmonic-finance-inc-certified-b-corp--theirstack-652165623",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "VC-Backed B2B Cybersecurity SaaS | New York (Hybrid)",
+            "displayed_url": "https://bebee.com \u203a United States \u203a Jobs \u203a Head of Sales",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales | VC-Backed B2B Cybersecurity SaaS | New York (Hybrid)** *The ... U.S. expansion while pursuing personal quota. The ideal candidate has a ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Cybersecurity/--in-Washington",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Saas Sales Cybersecurity Jobs in Washington (NOW HIRING)",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a --in-Washington",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Demonstrated track record of selling Cloud Cybersecurity SaaS solutions to U.S. Federal government ... Manager, Sales Engineer (Federal-DOD).",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.reddit.com/r/sales/comments/18lqbsk/saas_cyber_security_bdrsreps_whats_working_for/",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "SaaS Cyber Security BDR's/reps - what's working for white ...",
+            "displayed_url": "10+ comments \u00b7 2 years ago",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Can someone explain the thesis to me of how AI will replace cybersecurity, SaaS stocks, etc.? ... us like toddlers who just learned object ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/posts/renebystron_cybersecurity-hiring-vpofsales-activity-7396186370823692288-3Sdq",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Cybersecurity VP of Sales roles up to 558k: 8 US SaaS ...",
+            "displayed_url": "70+ reactions \u00b7 6 months ago",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"USA\" OR \"US\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... head of sales roles in cybersecurity, add them in the comments so ... Here are 8 US based cybersecurity SaaS roles for senior sales ...Read more",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+      "rationale": "This variant broadens the geography to include the regional term 'North America'.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/in/rudyricci",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Rudy Ricci - VP Sales | Cybersecurity SaaS",
+            "displayed_url": "7K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales | Cybersecurity SaaS | CRO-Scope GTM Leadership | BeyondTrust ... North America. This was formative in ways that still drive how I lead today ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Director-Remote/-in-Toronto,ON",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Saas Sales Director Remote Jobs in Toronto, ON (NOW HIRING)",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a -in-Toronto,ON",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... the cybersecurity, SaaS ... Director, Sales REPORTS TO: VP, Sales Cority is the global enterprise EHS software provider ... ... Senior Director of Sales - ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.craigwirwin.com/",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Craig W. Irwin \u2014 CRO & VP Sales | AI-Native Revenue ...",
+            "displayed_url": "https://www.craigwirwin.com",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Cybersecurity SaaS, $0 to $27M ARR, Enterprise SaaS category creation. ACV ... Apica VP Sales and COO North America, Performance SaaS, $0 to $10M ARR in 18 ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://dk.linkedin.com/in/magnuscohn",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Magnus Cohn - Commercial Leader | CRO / VP Sales",
+            "displayed_url": "2.4K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... North America, APAC, and LATAM ... Let's connect if you're building or scaling a commercial organization. Keywords: CRO, VP Sales, CCO, Head of Sales ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.talent.com/view?id=613765230344275387",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Head of Sales Engineering - North America (Remote) \u2013 EDB",
+            "displayed_url": "https://www.talent.com \u203a view",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" \"North America\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales ... North America. This role focuses on ... Head of Demand Generation | Cybersecurity SaaS ...",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "geography_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+      "rationale": "This variant broadens the geography to include specific state-level alternatives.",
+      "serp_results": [
+        {
+          "link": "https://bebee.com/us/jobs/head-of-sales-vc-backed-b2b-cybersecurity-saas-new-york-hybrid-harmonic-finance-inc-certified-b-corp--theirstack-652165623",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "VC-Backed B2B Cybersecurity SaaS | New York (Hybrid)",
+            "displayed_url": "https://bebee.com \u203a United States \u203a Jobs \u203a Head of Sales",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "*Head of Sales | VC-Backed B2B Cybersecurity SaaS | New York (Hybrid); *The Client. Our client is revolutionizing application security with an AI-powered ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/in/rudyricci",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Rudy Ricci - VP Sales | Cybersecurity SaaS",
+            "displayed_url": "7K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Sales | Cybersecurity SaaS | CRO-Scope GTM Leadership | BeyondTrust ... Your California Privacy Choices \u00b7 Cookie Policy \u00b7 Copyright Policy \u00b7 Brand Policy ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Vice-President-Unlimited-Pto/-in-New-York-City,NY",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Vice President Unlimited Pto Jobs in New York City, NY",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "VP Marketing: Growth, Brand & Demand for Cybersecurity SaaS ... VP Sales, East \u00b7 New York, NY. $250K - $300K/yr ... California Privacy Notice \u00b7 Terms ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.reval.site/u/mark-ousley",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Mark Ousley - Executive sales leader specializing in SaaS ...",
+            "displayed_url": "https://www.reval.site \u203a Browse Talent \u203a Head of Sales",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Experience. Head of SalesCo-Active Training Institute \u00b7 Aug 2025 \u2013 Present. Head of SalesAnalyze Corporation \u00b7 Feb 2023 \u2013 Aug 2025. Director of Key Accounts ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/jobs/view/head-of-sales-vc-backed-b2b-cybersecurity-saas-new-york-hybrid-at-harmonic-finance-inc-%E2%84%A2-certified-b-corp-4379668429",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Certified B Corp hiring Head of Sales | VC-Backed B2B ...",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a view \u203a head-of-sales-...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Head of Sales\") \"cybersecurity SaaS\" (\"California\" OR \"New York\" OR \"Texas\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of Sales | VC-Backed B2B Cybersecurity SaaS | New York (Hybrid) ... Senior Director/VP, Sales Operations ... Your California Privacy Choices \u00b7 Cookie Policy ...",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+      "rationale": "This variant combines title and geography broadening by using synonyms for 'VP Sales' and regional terms for the US.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/jobs/vp-sales-cybersecurity-jobs",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "339 Vp Sales Cybersecurity jobs in United States",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a vp-sales-cybersecurity...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "United States. Leverage your professional network, and get hired. New Vp Sales Cybersecurity jobs added daily ... VP, Sales (North America). Stealth. San ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.indeed.com/q-vice-president-of-sales-cyber-security-jobs.html",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Vice President of Sales Cyber Security Jobs, Employment",
+            "displayed_url": "https://www.indeed.com \u203a q-vice-president-of-sales-cybe...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Konica Minolta Business Solutions, U.S.A., Inc. Remote in Houston, TX 77079 ... Cybersecurity Pre Sales Director. Tata Consultancy Services. Dallas, TX.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://talents.vaia.com/companies/macrohire/sales-director-north-america-cybersecurity-services-39227967/",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Sales Director, North America \u2013 Cybersecurity Services",
+            "displayed_url": "https://talents.vaia.com \u203a ... \u203a Companies \u203a MacroHire",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "The predicted salary is between 72000 - 108000 $ per year. Sales Director, North America \u2013 Cybersecurity Services We are hiring a Sales Director (Hunter + ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Cyber-Security-Sales/-in-Boston,MA",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Cyber Security Sales Jobs in Boston, MA (NOW HIRING)",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a -in-Boston,MA",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Sales Director, North America - Cybersecurity Services We are hiring a Sales Director (Hunter + Account Manager) with 10-12 years of ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://builtin.com/job/enterprise-sales-director-cybersecurity-north-america/3755176",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "Enterprise Sales Director - Cybersecurity (North America)",
+            "displayed_url": "https://builtin.com \u203a job \u203a enterprise-sales-director-cyber...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"VP Sales\" OR \"Sales Director\") \"cybersecurity\" (\"USA\" OR \"North America\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "SandboxAQ is hiring for a Remote Enterprise Sales Director - Cybersecurity (North America) in USA. Find more details about the job and how to apply at Built In.",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+      "rationale": "This variant combines title and industry broadening by using synonyms for 'Head of Sales' and focusing on the broader 'SaaS' industry.",
+      "serp_results": [
+        {
+          "link": "https://www.linkedin.com/jobs/saas-sales-executive-jobs",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "1000+ Saas Sales Executive jobs in United States",
+            "displayed_url": "https://www.linkedin.com \u203a jobs \u203a saas-sales-executive-jo...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Today's top 1000+ Saas Sales Executive jobs in United States. Leverage your professional network, and get hired. New Saas Sales Executive jobs added daily.",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.indeed.com/q-saas-sales-executive-l-austin,-tx-jobs.html",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Saas Sales Executive Jobs, Employment in Austin, TX",
+            "displayed_url": "https://www.indeed.com \u203a q-saas-sales-executive-l-austin,...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... Saas Sales Executive jobs available in Austin, TX on Indeed.com. Apply ... United States Home Services. Austin, TX 78701. $150,000 - $200,000 a year.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://careers.jacobs.com/en_US/careers/JobDetail/SMB-SaaS-Sales-Executive-Private-Sector/38877",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "SMB SaaS Sales Executive, Private Sector",
+            "displayed_url": "https://careers.jacobs.com \u203a en_US \u203a careers \u203a JobDetail",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "SMB SaaS Sales Executive, Private Sector. Dallas, Texas, United States | 38877 | Transportation | Digital and Data | Multiple Locations.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.ziprecruiter.com/Jobs/Saas-Sales-Executive",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Saas Sales Executive Jobs (NOW HIRING)",
+            "displayed_url": "https://www.ziprecruiter.com \u203a Jobs \u203a Saas-Sales-Execu...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "As of May 17, 2026, the average yearly pay for saas sales executive in the United States is $82,500.00, according to ZipRecruiter salary data.Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://bebee.com/us/jobs/role/saas-sales-executive",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "148112+ Saas Sales Executive Jobs in United States 2026",
+            "displayed_url": "https://bebee.com \u203a United States \u203a Jobs",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Head of Sales\" OR \"Sales Executive\") \"SaaS\" \"United States\"",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "The estimated salary for Saas Sales Executive in United States ranges from $105,000 to $145,000 USD per year, depending on experience and location. How many ...",
+          "llm_judge_result": null
+        }
+      ]
+    },
+    {
+      "seeds": [
+        "combined_broadening"
+      ],
+      "query": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+      "rationale": "This variant combines title, industry, and geography broadening by using C-suite titles, general tech startups, and specific US locations.",
+      "serp_results": [
+        {
+          "link": "https://www.cast-usa.com/chief-sales-officer-jobs-in-atlanta",
+          "metadata": {
+            "rank": 1,
+            "source_name": "bright_data_google_serp",
+            "title": "Recruitment Agency For Chief Sales Officer Jobs In Atlanta",
+            "displayed_url": "https://www.cast-usa.com \u203a ... \u203a Chief Sales Officer",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... Chief Sales Officer\u00bbChief Sales Officer, Atlanta. Chief ... tech startups and innovation centers. This ... CSO Recruitment at Cast USA. Do you have the ...",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.linkedin.com/in/calvin-allen-71951121",
+          "metadata": {
+            "rank": 2,
+            "source_name": "bright_data_google_serp",
+            "title": "Calvin Allen - Chief Strategy Officer CSO | Co-Founder",
+            "displayed_url": "1.3K+ followers",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Chief Strategy Officer CSO | Co-Founder | Amazon Alum | 15+Yrs Enterprise Sales and Strategy | Partnerships | Fintech | Tech Startups ... Your California Privacy ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://www.chiefoutsiders.com/news/cso-howard-doherty",
+          "metadata": {
+            "rank": 3,
+            "source_name": "bright_data_google_serp",
+            "title": "Senior Technology Sales Executive to Take ...",
+            "displayed_url": "https://www.chiefoutsiders.com \u203a cso-howard-doherty",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "... CSO ... California in Los Angeles, California. About Chief Outsiders. Chief ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://wellfound.com/role/r/chief-strategy-officer",
+          "metadata": {
+            "rank": 4,
+            "source_name": "bright_data_google_serp",
+            "title": "Remote Chief Strategy Officer (CSO) Jobs in 2026",
+            "displayed_url": "https://wellfound.com \u203a role \u203a chief-strategy-officer",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "Head of / Director of Sales, USAFull-time. Remote \u2022 Austin. 7 days ago. 7 ... Tech Startups \u00b7 Remote. For Recruiters. Overview \u00b7 Recruit Pro \u00b7 Curated ...Read more",
+          "llm_judge_result": null
+        },
+        {
+          "link": "https://trellis.net/list/climate-tech-startups-to-watch-in-2026/",
+          "metadata": {
+            "rank": 5,
+            "source_name": "bright_data_google_serp",
+            "title": "15 Climate tech startups to watch in 2026",
+            "displayed_url": "https://trellis.net \u203a list \u203a climate-tech-startups-to-watch-in-...",
+            "search_engine": "google",
+            "query": {
+              "q": "(\"Chief Sales Officer\" OR \"CSO\") \"tech startups\" (\"USA\" OR \"California\")",
+              "location": "United States",
+              "language": "en"
+            },
+            "country": "United States",
+            "total_found": null,
+            "results_per_page": 5
+          },
+          "snippet": "15 Climate Tech Startups to Watch in 2026. These promising early-stage startups are innovating in three burgeoning sectors: data centers, materials and climate ...Read more",
+          "llm_judge_result": null
+        }
+      ]
+    }
+  ]
+}
