@@ -24,7 +24,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import List
 
-from retrieval import BrightDataGoogleSERPRetrievalClient, RetrievedCandidate
+from previous_attempt.retrieval import BrightDataGoogleSERPRetrievalClient, RetrievedCandidate
 
 from schemas import ExpansionSerpResult
 from utils import log_debug, log_warn

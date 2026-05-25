@@ -519,7 +519,7 @@ def run() -> Dict[str, Any]:
     }
 
     from previous_attempt.llm_request_logic import request_expansion_for_combination
-    from retrieval import BrightDataGoogleSERPRetrievalClient
+    from previous_attempt.retrieval import BrightDataGoogleSERPRetrievalClient
 
     _log("expanding combinations...")
     expansion_items: List[ExpansionOutputItem] = []
@@ -658,7 +658,7 @@ def run_retrieval_and_judging(
     judge_request = None
 
     if not SKIP_JUDGE:
-        from evaluation.b2b.boolean_questions import request_b2b_boolean_judge_output
+        from previous_attempt.evaluation.b2b.boolean_questions import request_b2b_boolean_judge_output
 
         judge_request = request_b2b_boolean_judge_output
 

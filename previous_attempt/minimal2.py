@@ -1,23 +1,23 @@
 """Minimal runnable example of request_query_variants + per-variant SERP.
 
 For each LLM-produced variant, run Bright Data Google SERP and print the
-top 5 result URLs.
-
-Uses the shared `schemas.py` types (`ExpansionVariant`,
-`ExpansionSerpResult`). Judge logic is NOT included yet — every
-`ExpansionSerpResult.llm_judge_result` is left as `None`.
+top 5 result URLs. Also write the full result as JSON to
+`outputs/minimal2_<UTC>.json`.
 
 Run:
-    python src/expansion/llm_based/minimal3.py
+    python src/expansion/llm_based/minimal2.py
 
 Requires .env with OPENAI_API_KEY and BRIGHTDATA_API_TOKEN.
 """
 
 from __future__ import annotations
 
+import json
 import sys
+from dataclasses import asdict, is_dataclass
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 
 # ---- sys.path bootstrap (same shape as experiment.py / config.py) ----
@@ -37,9 +37,7 @@ from langchain_core.prompts import ChatPromptTemplate  # noqa: E402
 from langchain_openai import ChatOpenAI  # noqa: E402
 from pydantic import BaseModel, Field  # noqa: E402
 
-from retrieval import BrightDataGoogleSERPRetrievalClient, RetrievedCandidate  # noqa: E402
-
-from schemas import ExpansionSerpResult, ExpansionVariant  # noqa: E402
+from previous_attempt.retrieval import BrightDataGoogleSERPRetrievalClient, RetrievedCandidate  # noqa: E402
 
 
 load_dotenv()
@@ -50,25 +48,20 @@ SERP_LOCATION = "United States"
 SERP_LANGUAGE = "en"
 SERP_DEVICE = "desktop"
 SERP_RESULTS_PER_VARIANT = 5
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
 
 # ---- Pydantic schemas ----
-#
-# Note: The full ExpansionVariant has a `serp_results` field that the LLM
-# should NOT populate (Phase B fills it from SERP). To keep the LLM's
-# response schema small and prevent it from inventing fake SERP results,
-# the LLM returns the slim `_LLMVariantOutput` shape; the runner promotes
-# each one to a full `ExpansionVariant` after the SERP step.
 
-class _LLMVariantOutput(BaseModel):
-    """The LLM-produced subset of an ExpansionVariant — no serp_results."""
+class QueryVariant(BaseModel):
+    variant_id: str = Field(..., description="Unique id like 'var_001_title_broadening'.")
     seeds: List[str] = Field(..., description="Which seed paradigms shaped this variant.")
-    query: str = Field(..., description="Google query body, no site: prefix, no -keyword exclusions.")
+    query_body: str = Field(..., description="Google query body, no site: prefix, no -keyword exclusions.")
     rationale: str = Field(..., description="One-sentence explanation.")
 
 
 class _QueryVariantsResponse(BaseModel):
-    variants: List[_LLMVariantOutput]
+    variants: List[QueryVariant]
 
 
 class B2BQuerySpec(BaseModel):
@@ -95,6 +88,7 @@ Each variant must:
 - Quote multi-word phrases.
 - NOT include site: operators.
 - NOT include negative -keyword exclusions.
+- Have a variant_id of the form var_<NNN>_<primary_seed>.
 - List the seeds it embodies in `seeds`.
 - Include a one-sentence rationale.
 
@@ -121,7 +115,7 @@ def request_query_variants(
     paradigm_seeds: List[str],
     num_variants: int = 8,
     chat_model: Optional[BaseChatModel] = None,
-) -> List[_LLMVariantOutput]:
+) -> List[QueryVariant]:
     llm = chat_model or ChatOpenAI(model=DEFAULT_MODEL, temperature=0.0)
     structured = llm.with_structured_output(
         _QueryVariantsResponse, method="function_calling"
@@ -171,27 +165,38 @@ def serp_search(
     )
 
 
-def candidate_to_serp_result(c: RetrievedCandidate) -> ExpansionSerpResult:
-    """Convert one RetrievedCandidate dataclass into an ExpansionSerpResult.
+# ---- Serialization ----
 
-    Judge result is left None — judging is not part of this script yet.
-    """
-    return ExpansionSerpResult(
-        link=c.url or "",
-        metadata={
-            "rank": c.rank,
-            "source_name": c.source_name,
-            "title": c.title,
-            **(c.structured_fields or {}),
-        },
-        snippet=c.snippet,
-        llm_judge_result=None,
+def to_serializable(value: Any) -> Any:
+    """Recursively convert Pydantic / dataclass / list / dict to JSON-safe values."""
+    if value is None:
+        return None
+    if hasattr(value, "model_dump"):
+        return value.model_dump(mode="json")
+    if is_dataclass(value):
+        return asdict(value)
+    if isinstance(value, dict):
+        return {k: to_serializable(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [to_serializable(item) for item in value]
+    return value
+
+
+def save_report(report: Dict[str, Any]) -> Path:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = OUTPUT_DIR / f"minimal2_{report['run_id']}.json"
+    output_path.write_text(
+        json.dumps(report, indent=2, default=str), encoding="utf-8"
     )
+    return output_path
 
 
 # ---- __main__ ----
 
 def main() -> None:
+    started_at = datetime.now(timezone.utc)
+    run_id = started_at.strftime("%Y%m%d_%H%M%S")
+
     spec = B2BQuerySpec(
         natural_query="VP Sales or Head of Sales at US cybersecurity SaaS startups in the United States",
         entity_type="person_profile",
@@ -212,49 +217,65 @@ def main() -> None:
     ]
 
     print("Phase A — generating variants via LLM...")
-    llm_variants = request_query_variants(
+    variants = request_query_variants(
         query_spec=spec, paradigm_seeds=seeds, num_variants=8
     )
-    print(f"  got {len(llm_variants)} variants\n")
+    print(f"  got {len(variants)} variants\n")
 
     print(f"Phase B — running SERP per variant ({SERP_RESULTS_PER_VARIANT} results each)...\n")
     client = make_retrieval_client()
 
-    expansion_variants: List[ExpansionVariant] = []
+    variant_entries: List[Dict[str, Any]] = []
 
-    for i, v in enumerate(llm_variants, 1):
-        print(f"[{i}/{len(llm_variants)}] seeds={v.seeds}")
-        print(f"      query: {v.query}")
+    for i, v in enumerate(variants, 1):
+        print(f"[{i}/{len(variants)}] {v.variant_id}  seeds={v.seeds}")
+        print(f"      query: {v.query_body}")
 
-        serp_results: List[ExpansionSerpResult] = []
+        entry: Dict[str, Any] = {
+            **to_serializable(v),
+            "serp_results": [],
+            "serp_error": None,
+        }
+
         try:
-            candidates = serp_search(client, v.query, n=SERP_RESULTS_PER_VARIANT)
+            candidates = serp_search(client, v.query_body, n=SERP_RESULTS_PER_VARIANT)
         except Exception as exc:
             print(f"      SERP error: {exc}\n")
-            expansion_variants.append(
-                ExpansionVariant(
-                    seeds=v.seeds, query=v.query, rationale=v.rationale, serp_results=[]
-                )
-            )
+            entry["serp_error"] = str(exc)
+            variant_entries.append(entry)
             continue
 
         for c in candidates[:SERP_RESULTS_PER_VARIANT]:
-            result = candidate_to_serp_result(c)
-            serp_results.append(result)
-            title = (c.title or "").strip()
-            print(f"        {c.rank}. {result.link or '(no url)'}")
+            url = c.url or "(no url)"
+            title = (c.title or "").strip()[:80]
+            print(f"        {c.rank}. {url}")
             if title:
                 print(f"           {title}")
+            entry["serp_results"].append(to_serializable(c))
 
-        expansion_variants.append(
-            ExpansionVariant(
-                seeds=v.seeds,
-                query=v.query,
-                rationale=v.rationale,
-                serp_results=serp_results,
-            )
-        )
+        variant_entries.append(entry)
         print()
+
+    completed_at = datetime.now(timezone.utc)
+
+    report: Dict[str, Any] = {
+        "run_id": run_id,
+        "started_at": started_at.isoformat(),
+        "completed_at": completed_at.isoformat(),
+        "elapsed_seconds": (completed_at - started_at).total_seconds(),
+        "query_spec": to_serializable(spec),
+        "paradigm_seeds": list(seeds),
+        "num_variants_requested": 8,
+        "num_variants_received": len(variants),
+        "serp_results_per_variant": SERP_RESULTS_PER_VARIANT,
+        "serp_location": SERP_LOCATION,
+        "serp_language": SERP_LANGUAGE,
+        "serp_device": SERP_DEVICE,
+        "variants": variant_entries,
+    }
+
+    output_path = save_report(report)
+    print(f"Report saved: {output_path}")
 
 
 if __name__ == "__main__":
