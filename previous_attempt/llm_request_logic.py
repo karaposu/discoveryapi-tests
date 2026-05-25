@@ -25,13 +25,13 @@ except ImportError as exc:  # pragma: no cover - depends on local environment
 else:
     _OPENAI_IMPORT_ERROR = None
 
-from expansion_schemas import (
+from previous_attempt.expansion_schemas import (
     CombinationExpansionDraft,
     ExpansionExperimentConfig,
     ExpansionInputData,
     ExpansionOutputResult,
 )
-from expansion_paradigm_types import ExpansionCombination
+from previous_attempt.expansion_paradigm_types import ExpansionCombination
 
 
 DEFAULT_OPENAI_MODEL = "gpt-4o"

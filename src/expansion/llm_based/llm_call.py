@@ -1,8 +1,8 @@
 """Generic LangChain wrapper for one structured-output LLM call.
 
 Single public function: `call_structured(...)`. Centralizes the call
-pattern used by both variant generation (`minimal4.py`) and candidate
-judging (`judge_logic.py`):
+pattern used by both variant generation (`variant_generation.py`) and
+candidate judging (`judge_logic.py`):
 
     ChatOpenAI
        └─ with_structured_output(<schema>, method="function_calling")

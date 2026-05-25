@@ -17,13 +17,12 @@ supports the claim.
 
 from __future__ import annotations
 
-from typing import List, Optional, Tuple
+from typing import Optional, Tuple
 
 from langchain_core.language_models.chat_models import BaseChatModel
-from pydantic import BaseModel, Field
 
 from llm_call import call_structured
-from schemas import LLMJudgeResult
+from schemas import JudgeResponse, LLMJudgeResult
 
 
 DEFAULT_JUDGE_MODEL = "gpt-4o"
@@ -116,19 +115,6 @@ Return a JudgeResponse whose `boolean_answers` list has one entry per
 question above, in the same order."""
 
 
-# ---- LLM-return shape (internal) ----
-
-class _JudgeResponse(BaseModel):
-    """The LLM's structured output. Promoted to LLMJudgeResult by the wrapper."""
-    boolean_answers: List[bool] = Field(
-        ...,
-        description=(
-            "One True/False per question, in the order given in the system prompt. "
-            f"Length MUST equal {len(QUESTIONS)}."
-        ),
-    )
-
-
 # ---- Helpers ----
 
 def _build_questions_block() -> str:
@@ -163,7 +149,7 @@ def request_judge_verdict(
     response = call_structured(
         system_prompt=_SYSTEM_PROMPT,
         user_prompt=_USER_PROMPT,
-        output_schema=_JudgeResponse,
+        output_schema=JudgeResponse,
         template_args={
             "questions_block": _build_questions_block(),
             "original_query": original_query,

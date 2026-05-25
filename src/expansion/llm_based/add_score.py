@@ -1,11 +1,12 @@
-"""Read a minimal4 report, run the LLM judge per SERP candidate, write a scored JSON.
+"""Read a SERP report, run the LLM judge per SERP candidate, write a scored JSON.
 
 This decouples the SERP step (which costs Bright Data quota) from the
-judge step (which costs OpenAI tokens). Run minimal4 once → save the
-report → run add_score.py against the saved report any number of times
-with different judge models / prompts.
+judge step (which costs OpenAI tokens). Run the expansion + SERP script
+once → save the report → run add_score.py against the saved report any
+number of times with different judge models / prompts.
 
-Input:  a JSON file produced by minimal4.py (with `variants[].serp_results`).
+Input:  a JSON file produced by `b2b_vertical_expansion_and_serp.py`
+        (with `variants[].serp_results`).
 Output: a NEW JSON file at <input>_scored.json (path is configurable).
 
 The output mirrors the input but:
@@ -15,8 +16,8 @@ The output mirrors the input but:
 - the top-level report gains a `judging` block (run-level aggregate).
 
 Run:
-    python src/expansion/llm_based/add_score.py outputs/minimal4_<UTC>.json
-    python src/expansion/llm_based/add_score.py outputs/minimal4_<UTC>.json --output outputs/scored.json
+    python src/expansion/llm_based/add_score.py outputs/b2b_vertical_expansion_and_serp_<UTC>.json
+    python src/expansion/llm_based/add_score.py outputs/b2b_vertical_expansion_and_serp_<UTC>.json --output outputs/scored.json
 """
 
 from __future__ import annotations
@@ -29,7 +30,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
-# ---- sys.path bootstrap (same shape as minimal4.py) ----
+# ---- sys.path bootstrap (same shape as b2b_vertical_expansion_and_serp.py) ----
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SDK_SRC = Path("/Users/ns/Desktop/projects/sdk-python/src")
@@ -100,7 +101,7 @@ def _ranking_summary(variants: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def score_report(input_path: Path, output_path: Optional[Path] = None) -> Path:
-    """Read a minimal4 report, attach judge results + scoring, write to a new file."""
+    """Read a SERP report, attach judge results + scoring, write to a new file."""
 
     report: Dict[str, Any] = json.loads(input_path.read_text(encoding="utf-8"))
 
@@ -200,12 +201,12 @@ def score_report(input_path: Path, output_path: Optional[Path] = None) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Add LLM judge scores to a minimal4 SERP report."
+        description="Add LLM judge scores to a SERP report produced by b2b_vertical_expansion_and_serp.py."
     )
     parser.add_argument(
         "input",
         type=Path,
-        help="Path to the minimal4 JSON report (the one with variants[].serp_results).",
+        help="Path to the SERP JSON report (the one with variants[].serp_results).",
     )
     parser.add_argument(
         "--output",

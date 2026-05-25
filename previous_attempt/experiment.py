@@ -24,7 +24,7 @@ from typing import Any, Dict, List, Optional
 
 # Importing config first runs the sys.path bootstrap so the imports below
 # resolve against the project root and the local Bright Data SDK source.
-from config import (
+from previous_attempt.config import (
     AUTO_CREATE_ZONES,
     BRIGHT_DATA_GOOGLE_SERP_SOURCE,
     BRIGHTDATA_TOKEN,
@@ -84,7 +84,7 @@ from config import (
 # The "drop one -> X" notes refer to *unsetting that field on a combination*
 # (leaving it None), not to deleting the import.
 
-from expansion_paradigm_types import (
+from previous_attempt.expansion_paradigm_types import (
     # Wrapper for one combination row: label + recipe_name + paradigms + parameters.
     # The unit of the experiment. Every entry in EXPANSION_COMBINATIONS is one of these.
     ExpansionCombination,
@@ -180,7 +180,7 @@ from expansion_paradigm_types import (
 #   - schema types = the OUTPUT shape (what the LLM returns + what ends up
 #     in the JSON report).
 
-from expansion_schemas import (
+from previous_attempt.expansion_schemas import (
     # The LLM's return type for one combination call. Deliberately small:
     # `query` plus a short trace (preserved/broadened constraints, rationale,
     # risk_notes). The LLM does NOT echo entity_type, source_lane, etc. —
@@ -241,7 +241,7 @@ from expansion_schemas import (
 # combinations; the schemas version is used when CONSTRUCTING
 # ExpansionOutputItem instances. The two get reconciled by `.value` lookup
 # inside build_expansion_output_item().
-from expansion_paradigm_types import (
+from previous_attempt.expansion_paradigm_types import (
     ExpansionQuerySyntaxStrategy as _ParadigmSyntaxStrategy,
 )
 
@@ -518,7 +518,7 @@ def run() -> Dict[str, Any]:
         "records": [],
     }
 
-    from llm_request_logic import request_expansion_for_combination
+    from previous_attempt.llm_request_logic import request_expansion_for_combination
     from retrieval import BrightDataGoogleSERPRetrievalClient
 
     _log("expanding combinations...")

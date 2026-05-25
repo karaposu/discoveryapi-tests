@@ -21,7 +21,7 @@ for import_path in (PROJECT_ROOT, SDK_SRC):
         sys.path.insert(0, import_path_text)
 
 
-from expansion_schemas import ExpansionInputConstraintValue  # noqa: E402
+from previous_attempt.expansion_schemas import ExpansionInputConstraintValue  # noqa: E402
 
 
 # ---- Query selection ----

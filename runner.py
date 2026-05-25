@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from dotenv import load_dotenv
 
-from experiment import run, save_report
+from previous_attempt.experiment import run, save_report
 
 load_dotenv()
 
